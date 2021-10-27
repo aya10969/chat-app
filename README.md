@@ -13,39 +13,22 @@
 - has_many :room_users
 - has_many :rooms, thro
 
-## rooms テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
 
-### Association
+## attend(出席) テーブル 
 
-- has_many :room_users
-- has_many :users, through: :room_users
-- has_many :messages
 
-## room_users テーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| room   | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| -------       | ---------- | ------------------------------ |
+| guest         | string     | null: false                    |
+| gender        | string     | null: false                    |
+| relationship  | string     | null: false                    |
+| address       | integer    | null: false                    |
+| transportation| string     | null: false                    |
+| second party  | string     | null: false                    |
+| user          | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :room
-- belongs_to :user
 
-## messages テーブル
-
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| content | string     |                                |
-| user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :room
 - belongs_to :user
